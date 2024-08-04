@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            position: relative;
+            animation-name: moveAndChange;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes moveAndChange {
+            0% {
+                left: 0;
+                top: 0;
+                background-color: #3498db;
+                border-radius: 0;
+            }
+            50% {
+                left: 200px;
+                top: 200px;
+                background-color: #e74c3c;
+                border-radius: 50%;
+            }
+            100% {
+                left: 400px;
+                top: 0;
+                background-color: #2ecc71;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

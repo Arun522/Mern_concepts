@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Basic Grid */
+        .basic-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Grid Areas */
+        .grid-areas {
+            grid-template-areas:
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+        .header { grid-area: header; }
+        .sidebar { grid-area: sidebar; }
+        .main { grid-area: main; }
+        .footer { grid-area: footer; }
+
+        /* Responsive Grid */
+        .responsive-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* Grid with Different Sized Cells */
+        .different-sizes {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .span-2 {
+            grid-column: span 2;
+        }
+        .span-3 {
+            grid-column: span 3;
+        }
+
+        /* Grid Alignment */
+        .alignment {
+            height: 200px;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Examples</h1>
+
+    <h2>1. Basic Grid</h2>
+    <div class="grid-container basic-grid">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <h2>2. Grid Areas</h2>
+    <div class="grid-container grid-areas">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item sidebar">Sidebar</div>
+        <div class="grid-item main">Main Content</div>
+        <div class="grid-item footer">Footer</div>
+    </div>
+
+    <h2>3. Responsive Grid</h2>
+    <div class="grid-container responsive-grid">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+    </div>
+
+    <h2>4. Grid with Different Sized Cells</h2>
+    <div class="grid-container different-sizes">
+        <div class="grid-item span-2">Span 2</div>
+        <div class="grid-item">Normal</div>
+        <div class="grid-item">Normal</div>
+        <div class="grid-item span-3">Span 3</div>
+        <div class="grid-item">Normal</div>
+    </div>
+
+    <h2>5. Grid Alignment</h2>
+    <div class="grid-container alignment">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+    </div>
+</body>
+</html>
